@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2019 a las 05:24:25
+-- Tiempo de generación: 22-05-2019 a las 02:18:10
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -102,14 +102,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2019_05_14_005143_categoria_migration', 1),
 (2, '2019_05_14_005514_imagen_migration', 1),
 (3, '2019_05_14_173146_telefono_migration', 1),
-(4, '2019_05_15_220025_rol_migration', 2),
-(5, '2019_05_14_002738_marca_migration', 3),
-(6, '2019_05_14_005440_tienda_migration', 4),
-(7, '2019_05_14_023837_producto_migration', 5),
-(8, '2019_05_16_031528_rol_migration', 6),
-(9, '2019_05_16_031623_rol_migration', 7),
-(10, '2019_05_16_031656_producto_destacado_migration', 8),
-(11, '2019_05_16_031715_admin_migration', 9);
+(4, '2019_05_16_031623_rol_migration', 1),
+(5, '2019_05_21_031511_sucursal_migration', 2),
+(6, '2019_05_14_005440_tienda_migration', 3),
+(7, '2019_05_16_031715_admin_migration', 4),
+(8, '2019_05_14_002738_marca_migration', 5),
+(9, '2019_05_14_023837_producto_migration', 6),
+(10, '2019_05_16_031656_producto_destacado_migration', 7);
 
 -- --------------------------------------------------------
 
@@ -159,6 +158,21 @@ CREATE TABLE `rol` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `sucursal`
+--
+
+CREATE TABLE `sucursal` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `direccion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `telefono`
 --
 
@@ -179,6 +193,7 @@ CREATE TABLE `tienda` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sucursal_id` bigint(20) UNSIGNED NOT NULL,
   `telefono_id` bigint(20) UNSIGNED NOT NULL,
   `imagen_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -247,6 +262,13 @@ ALTER TABLE `rol`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `sucursal`
+--
+ALTER TABLE `sucursal`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sucursal_imagen_id_foreign` (`imagen_id`);
+
+--
 -- Indices de la tabla `telefono`
 --
 ALTER TABLE `telefono`
@@ -257,6 +279,7 @@ ALTER TABLE `telefono`
 --
 ALTER TABLE `tienda`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `tienda_sucursal_id_foreign` (`sucursal_id`),
   ADD KEY `tienda_telefono_id_foreign` (`telefono_id`),
   ADD KEY `tienda_imagen_id_foreign` (`imagen_id`);
 
@@ -292,7 +315,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -310,6 +333,12 @@ ALTER TABLE `productos_destacados`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `sucursal`
+--
+ALTER TABLE `sucursal`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -358,10 +387,17 @@ ALTER TABLE `productos_destacados`
   ADD CONSTRAINT `productos_destacados_producto_id_foreign` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`);
 
 --
+-- Filtros para la tabla `sucursal`
+--
+ALTER TABLE `sucursal`
+  ADD CONSTRAINT `sucursal_imagen_id_foreign` FOREIGN KEY (`imagen_id`) REFERENCES `imagen` (`id`);
+
+--
 -- Filtros para la tabla `tienda`
 --
 ALTER TABLE `tienda`
   ADD CONSTRAINT `tienda_imagen_id_foreign` FOREIGN KEY (`imagen_id`) REFERENCES `imagen` (`id`),
+  ADD CONSTRAINT `tienda_sucursal_id_foreign` FOREIGN KEY (`sucursal_id`) REFERENCES `sucursal` (`id`),
   ADD CONSTRAINT `tienda_telefono_id_foreign` FOREIGN KEY (`telefono_id`) REFERENCES `telefono` (`id`);
 COMMIT;
 
