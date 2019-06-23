@@ -1,5 +1,0 @@
-
-
-create table pruebalogin.usuarios (id int auto_increment primary key, nombre varchar (30) not null, email varchar (50) not null unique, contrasenia varchar (128) not null);
-insert into pruebalogin.usuarios (nombre, email, contrasenia) values ('Wladimir','wladimir.cadiz.leal@hotmail.com','contra3');
-
