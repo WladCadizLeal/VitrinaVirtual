@@ -18,6 +18,10 @@ class Usuario extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
 
+    function login()
+    {
+        $this->load->view('vitrina/login');
+    }
     /*
      * Adding a new usuario
      */

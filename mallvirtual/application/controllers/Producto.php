@@ -18,6 +18,13 @@ class Producto extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
 
+    function inicio()
+    {
+        $data['productos'] = $this->Producto_model->get_all_productos();
+        
+        $data['_view'] = 'vitrina/mostrar';
+        $this->load->view('layouts/index',$data);
+    }
     /*
      * Adding a new producto
      */

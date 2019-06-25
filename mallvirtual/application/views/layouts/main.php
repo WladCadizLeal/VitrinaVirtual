@@ -41,14 +41,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <form action="<?php echo site_url(); ?>Login/cerrarSesion">
-                            <button>Cerrar sesion</button>
-                        </form>
-                    </ul>
-                </div>
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
