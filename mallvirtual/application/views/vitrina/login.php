@@ -36,13 +36,13 @@
     <div class="img">
       <div class="img__text m--up">
         <a href="index.html">
-          <img src="../images/resources/logovitrina.png" alt="Awesome Logo">
+          <img src="<?php echo base_url(); ?>/images/resources/logovitrina.png" alt="Awesome Logo">
       </a>
         <p>¡Acceso y oportunidades de expandir tu negocio!</p>
       </div>
       <div class="img__text m--in">
         <a href="index.html">
-          <img src="../images/resources/logovitrina.png" alt="Awesome Logo">
+          <img src="<?php echo base_url(); ?>/images/resources/logovitrina.png" alt="Awesome Logo">
       </a>
       <p>¡Acceso y oportunidades de expandir tu negocio!</p>
       </div>
@@ -54,7 +54,7 @@
     <!-- AGREGAR DESCRIPCIÓN O ALGO-->
     <div class="form sign-up">
       <h2>Vitrina virtual</h2>
-      <p style="margin-top: 2%;"> ehjbejhrbwejrf hbwierbvuw vwrhjwrhjvbwrhuv bwrhvjbev hjebvjherbjhwrvjhw rbvjhwrbvwjrhvwejrhvjhwvhjervjhervcjhercerj hvewrjhcvjhrcrhjervervcjhewyrucwvercjhergcjhewrbjhercvejwrc wejrvchrjchercegrcjherchebrjcec rkechergbejrvcejcehjce</p>
+      <p style="margin-top: 2%;">Bienvenido a la Vitrina Virtual de la Camara de Comercio de Puerto Montt!</p>
     </div>
   </div> 
 </div>

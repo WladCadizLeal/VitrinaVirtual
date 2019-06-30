@@ -65,11 +65,20 @@
 								<?php 
 								foreach($all_locales as $local)
 								{
-									$selected = ($local['id'] == $local['local_fk']) ? ' selected="selected"' : "";
+									$selected = ($local['id'] == $producto['local_fk']) ? ' selected="selected"' : "";
 
 									echo '<option value="'.$local['id'].'" '.$selected.'>'.$local['nombre'].'</option>';
 								} 
 								?>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="destacado" class="control-label">Destacado</label>
+						<div class="form-group">
+							<select name="destacado" class="form-control">
+								<option value=null>No</option>
+								<option value="1">Si</option>
 							</select>
 						</div>
 					</div>

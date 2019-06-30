@@ -24,7 +24,7 @@
                     <tr>
 						<td><?php echo $p['nombre']; ?></td>
 						<td><?php echo $p['descripcion']; ?></td>
-						<td><?php echo $p['precio']; ?></td>
+						<td>$<?php echo number_format($p['precio'], 0, ".", "."); ?></td>
 						<td><?php echo $p['marca']; ?></td>
                         <td><?php echo $p['categoria']; ?></td>
                         <td><?php echo $p['local']; ?></td>

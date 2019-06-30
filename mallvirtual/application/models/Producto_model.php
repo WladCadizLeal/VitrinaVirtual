@@ -20,7 +20,7 @@ class Producto_model extends CI_Model
      */
     function get_all_productos()
     {
-        $this->db->select('p.id, p.nombre, p.descripcion, p.precio, p.imagen, p.creado_en, m.nombre as marca, c.nombre as categoria, l.nombre as local');
+        $this->db->select('p.id, p.nombre, p.descripcion, p.precio, p.categoria_fk, p.destacado, p.imagen, p.creado_en, m.nombre as marca, c.nombre as categoria, l.nombre as local');
         $this->db->from('productos p');
         $this->db->join('marcas m', 'm.id = p.marca_fk');
         $this->db->join('categorias c', 'c.id = p.categoria_fk');

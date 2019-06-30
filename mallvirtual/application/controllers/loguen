@@ -1,9 +1,0 @@
-function edit($id)
-{
-    if ($this->session->userdata("login"))
-    {
-
-    } else {
-        $this->load->view('vitrina/login');
-    }
-}

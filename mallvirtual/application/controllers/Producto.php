@@ -80,6 +80,7 @@ class Producto extends CI_Controller
                     'local_fk' => $this->input->post('local_fk'),
                     'nombre' => $this->input->post('nombre'),
                     'precio' => $this->input->post('precio'),
+                    'destacado' => $this->input->post('destacado'),
                     'imagen' => $fileDestination,
                     'descripcion' => $this->input->post('descripcion'),
                 );
@@ -149,6 +150,7 @@ class Producto extends CI_Controller
                         'local_fk' => $this->input->post('local_fk'),
                         'nombre' => $this->input->post('nombre'),
                         'precio' => $this->input->post('precio'),
+                        'destacado' => $this->input->post('destacado'),
                         'imagen' => $fileDestination,
                         'descripcion' => $this->input->post('descripcion'),
                     );
