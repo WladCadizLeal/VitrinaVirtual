@@ -10,7 +10,6 @@
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
-						<th>ID</th>
 						<th>Nombre</th>
 						<th>Descripcion</th>
 						<th>Creado En</th>
@@ -18,7 +17,6 @@
                     </tr>
                     <?php foreach($categorias as $c){ ?>
                     <tr>
-						<td><?php echo $c['id']; ?></td>
 						<td><?php echo $c['nombre']; ?></td>
 						<td><?php echo $c['descripcion']; ?></td>
 						<td><?php echo $c['creado_en']; ?></td>

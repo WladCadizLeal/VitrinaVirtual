@@ -17,7 +17,7 @@
 
   <!--<p class="tip">Click on button in image container</p> -->
 <div class="cont">
-  <form class="form sign-in" action="check-login.php" method="post">
+  <form class="form sign-in" action="<?php echo base_url();?>auth/login" method="post">
     <h2>Iniciar sesión</h2>
     <label>
       <span style="color:black;">Correo</span>

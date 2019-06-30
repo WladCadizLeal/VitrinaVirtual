@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-06-2019 a las 00:14:44
+-- Tiempo de generación: 30-06-2019 a las 02:23:21
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -71,7 +71,8 @@ CREATE TABLE `locales` (
 INSERT INTO `locales` (`id`, `nombre`, `descripcion`, `sucursal_fk`, `telefono_fk`, `imagen`, `creado_en`) VALUES
 (2, 'Mundo Joven', 'Es joven', 2, 4, 'includes/img/5d0ff77bb4af98.05246359.jpg', '2019-06-23 22:04:43'),
 (3, 'Blockbuster', 'Peliculas bla bla', 2, 3, 'includes/img/5d0ff79202dc82.85508830.png', '2019-06-23 22:05:06'),
-(5, 'Audiomusica', 'Instrumentos hartos', 2, 2, 'includes/img/5d0ff81d82d2b6.66196450.png', '2019-06-23 22:07:25');
+(5, 'Audiomusica', 'Instrumentos hartos', 2, 2, 'includes/img/5d0ff81d82d2b6.66196450.png', '2019-06-23 22:07:25'),
+(6, 'Automotora Irani', 'De tradición.', 2, 2, 'includes/img/5d122d6b5870c9.72277047.jpg', '2019-06-25 14:19:23');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,8 @@ INSERT INTO `marcas` (`id`, `nombre`, `descripcion`, `imagen`, `creado_en`) VALU
 (3, 'Nike', 'Americana', 0x696e636c756465732f696d672f35643066663665666561636239362e36313634383933342e706e67, '2019-06-23 22:02:23'),
 (4, 'Jeep', '4 ruedas', 0x696e636c756465732f696d672f35643066663730303935333064342e37393730353034382e6a7067, '2019-06-23 22:02:40'),
 (5, 'Fender', 'Guitarritas', 0x696e636c756465732f696d672f35643066663731313265653863362e34343037323837302e6a7067, '2019-06-23 22:02:57'),
-(6, 'Sony', 'No Phillips', 0x696e636c756465732f696d672f35643066663733303663326662362e33313335343738362e706e67, '2019-06-23 22:03:28');
+(6, 'Sony', 'No Phillips', 0x696e636c756465732f696d672f35643066663733303663326662362e33313335343738362e706e67, '2019-06-23 22:03:28'),
+(7, 'Ibanez', 'Marca Japonesa.', 0x696e636c756465732f696d672f35643132333934393061363632312e38323938333234352e6a7067, '2019-06-25 15:10:01');
 
 -- --------------------------------------------------------
 
@@ -121,29 +123,12 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `marca_fk`, `categoria_fk`, `local_fk`, `imagen`, `creado_en`) VALUES
-(2, 'Guitarra Stratocaster', 'si si no no', 1990, 5, 5, 5, 0x696e636c756465732f696d672f35643066663833353361313830342e33343430323236332e6a7067, '2019-06-23 22:07:49'),
-(3, 'Auto Jeep', 'si', 1230, 4, 8, 3, 0x696e636c756465732f696d672f35643066663838366537313665392e37363030353435372e6a7067, '2019-06-23 22:09:10'),
-(4, 'Pantalon Nike', 'sipo', 120, 3, 2, 2, 0x696e636c756465732f696d672f35643066663863336236386634322e33343731393733352e6a7067, '2019-06-23 22:10:11');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `productos_destacados`
---
-
-CREATE TABLE `productos_destacados` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `producto_fk` int(11) NOT NULL,
-  `creado_en` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `productos_destacados`
---
-
-INSERT INTO `productos_destacados` (`id`, `nombre`, `producto_fk`, `creado_en`) VALUES
-(1, 'OMG MIRA ESTA OFERTA 19% DESC', 4, '2019-06-23 22:10:29');
+(2, 'Guitarra Stratocaster', 'La Fender Stratocaster, popularmente conocida como Strato en su abreviatura en español, Strat en inglés, es un modelo de guitarra eléctrica diseñado por Leo Fender, Bill Carson, George Fullerton, y Freddie Tavares en 1954.', 1990, 5, 5, 5, 0x696e636c756465732f696d672f35643132333831666235363534352e33303234393536372e6a7067, '2019-06-23 22:07:49'),
+(3, 'Auto Jeep', 'El Jeep Renegade es un todocamino compacto fabricado por Jeep. Es el más pequeño de la gama Jeep, y destaca por tener muchas versiones, adaptadas a diferentes clientes.', 1230, 4, 8, 6, 0x696e636c756465732f696d672f35643132333830326139356661342e39333837333432362e6a7067, '2019-06-23 22:09:10'),
+(4, 'Pantalon Nike', 'Un básico de todos los días, Men’s Nike Sportswear Pant te entrega un look relajado junto a un suave confort.\r\n', 120, 3, 2, 2, 0x696e636c756465732f696d672f35643132333764613338373366372e34353635343939342e6a7067, '2019-06-23 22:10:11'),
+(5, 'Jeep Jeep', 'El Jeep Renegade es un todocamino compacto fabricado por Jeep. Es el más pequeño de la gama Jeep, y destaca por tener muchas versiones, adaptadas a diferentes clientes.', 99000000, 4, 8, 6, 0x696e636c756465732f696d672f35643132333762626166373562342e31363339393532302e6a7067, '2019-06-25 14:20:59'),
+(6, 'Bajo Ibanez', 'Bajo de 4 cuerdas GSR perteneciente a la serie GIO basada en los Soundgears, estos bajos no solo se tocan y se ven mejor que cualquier otro en su rango de precio, sino que también cada bajo GSR recibe el ajuste e inspección de su contraparte más cara', 99990, 7, 5, 5, 0x696e636c756465732f696d672f35643132333936633838663866312e38353837353236342e6a7067, '2019-06-25 15:10:36'),
+(7, 'Televisor Sonia', 'Con 4K X-Reality Pro, cada imagen se convierte a una calidad más cercana a 4K real, para disfrutar de una claridad sorprendente.', 99990, 6, 4, 5, 0x696e636c756465732f696d672f35643132336364316133373937382e31343538303233382e6a7067, '2019-06-25 15:25:05');
 
 -- --------------------------------------------------------
 
@@ -243,13 +228,6 @@ ALTER TABLE `productos`
   ADD KEY `local_fk` (`local_fk`);
 
 --
--- Indices de la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `producto_fk` (`producto_fk`);
-
---
 -- Indices de la tabla `sucursales`
 --
 ALTER TABLE `sucursales`
@@ -281,25 +259,19 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `locales`
 --
 ALTER TABLE `locales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `sucursales`
@@ -337,12 +309,6 @@ ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`marca_fk`) REFERENCES `marcas` (`id`),
   ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`categoria_fk`) REFERENCES `categorias` (`id`),
   ADD CONSTRAINT `productos_ibfk_3` FOREIGN KEY (`local_fk`) REFERENCES `locales` (`id`);
-
---
--- Filtros para la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  ADD CONSTRAINT `productos_destacados_ibfk_1` FOREIGN KEY (`producto_fk`) REFERENCES `productos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

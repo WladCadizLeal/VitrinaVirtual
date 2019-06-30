@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2019 a las 17:16:30
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 30-06-2019 a las 02:23:21
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -133,26 +133,6 @@ INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `marca_fk`, `c
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos_destacados`
---
-
-CREATE TABLE `productos_destacados` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `producto_fk` int(11) NOT NULL,
-  `creado_en` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `productos_destacados`
---
-
-INSERT INTO `productos_destacados` (`id`, `nombre`, `producto_fk`, `creado_en`) VALUES
-(1, 'OMG MIRA ESTA OFERTA 19% DESC', 4, '2019-06-23 22:10:29');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `sucursales`
 --
 
@@ -248,13 +228,6 @@ ALTER TABLE `productos`
   ADD KEY `local_fk` (`local_fk`);
 
 --
--- Indices de la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `producto_fk` (`producto_fk`);
-
---
 -- Indices de la tabla `sucursales`
 --
 ALTER TABLE `sucursales`
@@ -298,13 +271,7 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `sucursales`
@@ -342,12 +309,6 @@ ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`marca_fk`) REFERENCES `marcas` (`id`),
   ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`categoria_fk`) REFERENCES `categorias` (`id`),
   ADD CONSTRAINT `productos_ibfk_3` FOREIGN KEY (`local_fk`) REFERENCES `locales` (`id`);
-
---
--- Filtros para la tabla `productos_destacados`
---
-ALTER TABLE `productos_destacados`
-  ADD CONSTRAINT `productos_destacados_ibfk_1` FOREIGN KEY (`producto_fk`) REFERENCES `productos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

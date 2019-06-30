@@ -10,7 +10,6 @@
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
-						<th>ID</th>
 						<th>Nombre</th>
 						<th>Direccion</th>
 						<th>Imagen</th>
@@ -19,7 +18,6 @@
                     </tr>
                     <?php foreach($sucursales as $s){ ?>
                     <tr>
-						<td><?php echo $s['id']; ?></td>
 						<td><?php echo $s['nombre']; ?></td>
 						<td><?php echo $s['direccion']; ?></td>
 						<td><img src="<?php echo base_url($s['imagen']); ?>" height="100" width="150"/></td>

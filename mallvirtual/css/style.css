@@ -6395,13 +6395,13 @@ select:focus {
 .single-blog-post .post-date h3 {
     position: relative;
     display: block;
-    font-size: 24px;
+    font-size: 10px;
     color: #ffffff;
-    line-height: 24px;
+    line-height: 14px;
     text-transform: uppercase;
 }
 .single-blog-post .post-date h3 span{
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .single-blog-post .text-holder {

@@ -41,6 +41,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+                <!-- Espacio de info de usuario logueado-->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="<?php echo base_url()?>images/icon/avatar5.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs"><b><?php echo $this->session->userdata("nombre")?></b></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <a href="<?php echo base_url(); ?>auth/logout"> Cerrar Sesión</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Fin de espacio de usuario logueado -->
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
@@ -51,7 +74,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">Panel de Navegacion</li>
                     <li>
-                        <a href="<?php echo site_url(); ?>">
+                        <a href="<?php echo site_url(); ?>dashboard">
                             <i class="fa fa-dashboard"></i> <span>Inicio</span>
                         </a>
                     </li>
@@ -109,19 +132,6 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-desktop"></i> <span>Producto Destacado</span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active">
-                                <a href="<?php echo site_url('producto_destacado/add'); ?>"><i class="fa fa-plus"></i>Agregar</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('producto_destacado/index'); ?>"><i class="fa fa-list-ul"></i>Listar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
                             <i class="fa fa-desktop"></i> <span>Sucursal</span>
                         </a>
                         <ul class="treeview-menu">
@@ -143,19 +153,6 @@
                             </li>
                             <li>
                                 <a href="<?php echo site_url('telefono/index'); ?>"><i class="fa fa-list-ul"></i>Listar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-desktop"></i> <span>Usuario</span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active">
-                                <a href="<?php echo site_url('usuario/add'); ?>"><i class="fa fa-plus"></i>Agregar</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('usuario/index'); ?>"><i class="fa fa-list-ul"></i>Listar</a>
                             </li>
                         </ul>
                     </li>

@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- master stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/responsive.css">
@@ -45,13 +46,13 @@
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="header-style1 clearfix">
                             <div class="headers1-logo float-left">
-                                <a href="index.html">
-                                    <img src="images/resources/logovitrina.png" alt="Awesome Logo">
+                                <a href="<?php echo base_url(); ?>">
+                                    <img src="<?php echo base_url(); ?>images/resources/logovitrina.png" alt="Awesome Logo">
                                 </a>
                             </div>
                             <div class="headers1-header-right float-right">
                                 <div class="headers1-button" style="margin-left: -3%;">
-                                    <a class="btn-one" href="<?php echo base_url(); ?>/usuario/login"><b>Iniciar Sesión</b><span class="icon-null"></span></a>
+                                    <a class="btn-one" href="<?php echo base_url(); ?>/auth"><b>Iniciar Sesión</b></a>
                                 </div>
                             </div>
                         </div>
@@ -78,72 +79,23 @@
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
                                         <li class="dropdown current"><a href="index.html">Inicio</a></li>
-
                                         <li class="dropdown"><a href="#">Tiendas</a>
                                             <ul>
-                                                <li><a href="#">Electrónica y tecnológica</a>
-                                                    <ul>
-                                                        <li><a href="#">Tienda 1</a></li>
-                                                        <li><a href="#">Tienda 2</a></li>
-                                                        <li><a href="#">Tienda 3</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Hogar</a>
-                                                    <ul>
-                                                        <li><a href="#">Tienda 1</a></li>
-                                                        <li><a href="#">Tienda 2</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Comida y almuerzos</a>
-                                                    <ul>
-                                                        <li><a href="#">Tienda 1</a></li>
-                                                        <li><a href="#">Tienda 2</a></li>
-                                                        <li><a href="#">Tienda 3</a></li>
-                                                        <li><a href="#">Tienda 4</a></li>
-                                                        <li><a href="#">Tienda 5</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Venta de vehículos</a>
-                                                    <ul>
-                                                        <li><a href="#">Tienda 1</a></li>
-                                                        <li><a href="#">Tienda 2</a></li>
-                                                        <li><a href="#">Tienda 3</a></li>
-                                                        <li><a href="#">Tienda 4</a></li>
-                                                    </ul>
-                                                </li>
+                                                <li><a href="#">Tienda 1</a></li>
+                                                <li><a href="#">Tienda 2</a></li>
+                                                <li><a href="#">Tienda 3</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="#">Categorías</a>
                                             <ul>
-                                                <li><a href="#">Alimentos</a></li>
-                                                <li><a href="#">Libros</a></li>
-                                                <li><a href="#">Mercadería</a></li>
-                                                <li><a href="#">Música</a></li>
-                                                <li><a href="#">Tecnología</a></li>
-                                                <li><a href="#">Ropa</a></li>
-
+                                                <li><a href="#">Categoria 1</a></li>
+                                                <li><a href="#">Categoria 2</a></li>
+                                                <li><a href="#">Categoria 3</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </nav>
-
-                            <div class="mainmenu-right">
-                                <div class="outer-search-box">
-                                    <div class="seach-toggle"><i class="fa fa-search"></i></div>
-                                    <ul class="search-box">
-                                        <li>
-                                            <form method="post" action="index.html">
-                                                <div class="form-group">
-                                                    <input type="search" name="search" placeholder="Buscar aquí" required>
-                                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                                </div>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -174,7 +126,7 @@
                             <div class="contact-info-box">
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img src="images/resources/logovitrina.png" alt="Logo">
+                                        <img src="<?php echo base_url(); ?>images/resources/logovitrina.png" alt="Logo">
                                     </a>
                                 </div>
                                 <div class="text">
