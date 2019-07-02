@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="dropdown current"><a href="index.html">Inicio</a></li>
+                                        <li class="dropdown current"><a href="<?php echo base_url();?>">Inicio</a></li>
                                         <li class="dropdown"><a href="#">Tiendas</a>
                                             <ul>
                                                 <li><a href="#">Tienda 1</a></li>
@@ -96,6 +96,21 @@
                                     </ul>
                                 </div>
                             </nav>
+                            <div class="mainmenu-right">
+                            <div class="outer-search-box">
+                                <div class="seach-toggle"><i class="fa fa-search"></i></div>
+                                <ul class="search-box">
+                                    <li>
+                                        <form method="post" action="index.html">
+                                            <div class="form-group">
+                                                <input type="search" name="search" placeholder="Search Here" required>
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
