@@ -1,20 +1,20 @@
 <?php
- 
+
 class Producto_model extends CI_Model
 {
     function __construct()
     {
         parent::__construct();
     }
-    
+
     /*
      * Get producto by id
      */
     function get_producto($id)
     {
-        return $this->db->get_where('productos',array('id'=>$id))->row_array();
+        return $this->db->get_where('productos', array('id' => $id))->row_array();
     }
-        
+
     /*
      * Get all productos
      */
@@ -27,39 +27,36 @@ class Producto_model extends CI_Model
         $this->db->join('locales l', 'l.id = p.local_fk');
         $this->db->order_by('id', 'desc');
         $query = $this->db->get();
-        if($query->num_rows() != 0)
-        {
+        if ($query->num_rows() != 0) {
             return $query->result_array();
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
-        
+
     /*
      * function to add new producto
      */
     function add_producto($params)
     {
-        $this->db->insert('productos',$params);
+        $this->db->insert('productos', $params);
         return $this->db->insert_id();
     }
-    
+
     /*
      * function to update producto
      */
-    function update_producto($id,$params)
+    function update_producto($id, $params)
     {
-        $this->db->where('id',$id);
-        return $this->db->update('productos',$params);
+        $this->db->where('id', $id);
+        return $this->db->update('productos', $params);
     }
-    
+
     /*
      * function to delete producto
      */
     function delete_producto($id)
     {
-        return $this->db->delete('productos',array('id'=>$id));
+        return $this->db->delete('productos', array('id' => $id));
     }
 }

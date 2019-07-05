@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="dropdown current"><a href="<?php echo base_url();?>">Inicio</a></li>
+                                        <li class="dropdown current"><a href="<?php echo base_url(); ?>">Inicio</a></li>
                                         <li class="dropdown"><a href="#">Tiendas</a>
                                             <ul>
                                                 <li><a href="#">Tienda 1</a></li>
@@ -97,20 +97,13 @@
                                 </div>
                             </nav>
                             <div class="mainmenu-right">
-                            <div class="outer-search-box">
-                                <div class="seach-toggle"><i class="fa fa-search"></i></div>
-                                <ul class="search-box">
-                                    <li>
-                                        <form method="post" action="index.html">
-                                            <div class="form-group">
-                                                <input type="search" name="search" placeholder="Search Here" required>
-                                                <button type="submit"><i class="fa fa-search"></i></button>
-                                            </div>
-                                        </form>
-                                    </li>
-                                </ul>
+                                <form action="<?php echo site_url('search/search_keyword'); ?>" method="post">
+                                    <div class="form-group">
+                                        <input type="text" name="keyword" placeholder="Busca aqui" required>
+                                        <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
